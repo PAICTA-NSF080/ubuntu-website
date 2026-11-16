@@ -1,0 +1,9 @@
+<h2>Welcome Client {{ user.username }} 🧡</h2>
+<a href="/logout/">Logout</a> | <a href="/request/new/">+ Log New Request</a>
+<h3>My Service Requests</h3>
+<table border="1"><tr><th>Title</th><th>Category</th><th>Status</th></tr>
+{% for r in requests %}<tr><td>{{ r.title }}</td><td>{{ r.category }}</td><td>{{ r.status }}</td></tr>
+{% empty %}<tr><td colspan="3">No requests yet</td></tr>{% endfor %}</table>
+<h3>Opportunities</h3>
+{% for o in opps %}<p><b>{{ o.title }}</b> - {{ o.type }} - Deadline: {{ o.deadline }} - <a href="/opportunity/{{ o.id }}/apply/">Apply</a></p>
+{% empty %}<p>No opportunities yet</p>{% endfor %}

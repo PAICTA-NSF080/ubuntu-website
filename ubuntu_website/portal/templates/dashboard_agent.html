@@ -1,0 +1,6 @@
+<h2>Welcome Agent {{ user.username }} 💙</h2>
+<a href="/logout/">Logout</a>
+<h3>Assigned / Open Requests</h3>
+<table border="1"><tr><th>Title</th><th>Client</th><th>Status</th><th>Action</th></tr>
+{% for r in requests %}<tr><td>{{ r.title }}</td><td>{{ r.client.username }}</td><td>{{ r.status }}</td><td><a href="/request/{{ r.id }}/update/">Update Status</a></td></tr>
+{% empty %}<tr><td colspan="4">No requests</td></tr>{% endfor %}</table>

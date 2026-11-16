@@ -1,0 +1,5 @@
+<h2>Review Application</h2>
+<p>{{ app.applicant.username }} - {{ app.opportunity.title }} - {{ app.message }}</p>
+<form method="post">{% csrf_token %}
+<select name="status"><option>Pending</option><option>Approved</option><option>Rejected</option></select>
+<button type="submit">Save</button></form>

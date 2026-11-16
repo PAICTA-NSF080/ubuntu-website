@@ -1,0 +1,5 @@
+<h2>Update: {{ req.title }}</h2>
+<p>Client: {{ req.client.username }} | Current: {{ req.status }}</p>
+<form method="post">{% csrf_token %}
+<select name="status"><option>Open</option><option>In Progress</option><option>Resolved</option></select>
+<button type="submit">Update</button></form>

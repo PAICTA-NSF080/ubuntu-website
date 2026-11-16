@@ -1,0 +1,8 @@
+<h2>Welcome Admin {{ user.username }} 💚</h2>
+<a href="/logout/">Logout</a> | <a href="/opportunity/new/">+ Post Opportunity</a> | <a href="/admin/">Django Admin</a>
+<h3>All Requests ({{ requests.count }})</h3>
+<table border="1"><tr><th>Title</th><th>Client</th><th>Status</th></tr>
+{% for r in requests %}<tr><td>{{ r.title }}</td><td>{{ r.client.username }}</td><td>{{ r.status }}</td></tr>{% endfor %}</table>
+<h3>Applications</h3>
+{% for a in apps %}<p>{{ a.applicant.username }} applied for {{ a.opportunity.title }} - {{ a.status }} - <a href="/application/{{ a.id }}/review/">Review</a></p>
+{% empty %}<p>No applications</p>{% endfor %}

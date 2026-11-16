@@ -1,0 +1,5 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h2>MSME Support Portal - Register</h2>
+<form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">Register</button></form>
+<a href="/login/">Already have account? Login</a>
